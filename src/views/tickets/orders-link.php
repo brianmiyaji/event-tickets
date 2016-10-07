@@ -40,7 +40,7 @@ if ( 0 !== $ticket_count ) {
 if ( $is_event_page ) {
 	$link = trailingslashit( get_permalink( $event_id ) ) . 'tickets';
 } else {
-	$link = home_url( '/tickets/' . $event_id );
+	$link = home_url( '/tickets/' . $event_id ) . '?tribe-edit-orders=1';;
 }
 $message = sprintf( esc_html__( 'You have %s for this %s.', 'event-tickets' ), implode( __( ' and ', 'event-tickets' ), $counters ), $events_label_singular );
 $message .= ' <a href="' . esc_url( $link ) . '">' . sprintf( esc_html__( 'View your %s', 'event-tickets' ), $this->get_description_rsvp_ticket( $event_id, $user_id, true ) ) . '</a>';
